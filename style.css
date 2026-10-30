@@ -1,0 +1,820 @@
+
+/* =========================================
+   FIWER — PERSONAL BUSINESS CARD
+   Premium dark / gold futuristic design
+========================================= */
+
+
+/* =========================================
+   1. ОСНОВНЫЕ НАСТРОЙКИ
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #090c11;
+    --panel: #111720;
+    --panel-light: #19222e;
+
+    --text: #f3f5f8;
+    --muted: #a5b0bd;
+
+    --line: #2b3542;
+    --gold: #e9b75e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   2. ГЛАВНАЯ СЕКЦИЯ
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    padding: 30px 7%;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background:
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(233, 183, 94, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #111720,
+            #090c11 75%
+        );
+}
+
+/* Декоративное кольцо */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 460px;
+    height: 460px;
+
+    right: -160px;
+    bottom: -190px;
+
+    border: 1px solid rgba(233, 183, 94, 0.2);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 35px rgba(233, 183, 94, 0.025),
+        0 0 0 75px rgba(233, 183, 94, 0.025);
+
+    pointer-events: none;
+}
+
+/* Световое пятно */
+
+.background-glow {
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    top: 10%;
+    right: -180px;
+
+    background: radial-gradient(
+        circle,
+        rgba(233, 183, 94, 0.12),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   3. ВЕРХНЯЯ ПАНЕЛЬ
+========================================= */
+
+.hero-top {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 23px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+/* Логотип */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gold);
+    border-radius: 7px;
+
+    color: #111720;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.logo-light {
+    color: var(--gold);
+}
+
+/* Верхняя подпись */
+
+.top-label {
+    color: var(--muted);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Статус доступности */
+
+.availability {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #c4ced9;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.availability-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #67d3ac;
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px #67d3ac;
+}
+
+
+/* =========================================
+   4. ЦЕНТРАЛЬНЫЙ БЛОК
+========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 65px;
+
+    max-width: 1450px;
+    width: 100%;
+
+    margin: auto;
+    padding: 65px 0;
+}
+
+
+/* =========================================
+   5. ТЕКСТОВАЯ ЧАСТЬ
+========================================= */
+
+.hero-text {
+    animation: appear 0.9s ease both;
+}
+
+/* Приветствие */
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 27px;
+
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.line {
+    display: inline-block;
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+/* Главный заголовок */
+
+h1 {
+    font-size: clamp(45px, 6.2vw, 91px);
+
+    font-weight: 800;
+    line-height: 0.99;
+
+    letter-spacing: -5px;
+}
+
+h1 span {
+    color: var(--gold);
+}
+
+/* Должность */
+
+.hero-text h2 {
+    margin-top: 30px;
+
+    color: #c7cbd4;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hero-text h2 span {
+    color: var(--gold);
+    font-weight: 800;
+}
+
+/* Описание */
+
+.description {
+    max-width: 520px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   6. КНОПКА CTA
+========================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin-top: 35px;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 16px 23px;
+
+    background: var(--gold);
+
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+
+    color: #101318;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.main-button span {
+    font-size: 17px;
+}
+
+.main-button:hover {
+    background: transparent;
+
+    color: var(--gold);
+
+    transform: translateY(-4px);
+}
+
+.action-note {
+    color: var(--muted);
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   7. ФУТУРИСТИЧЕСКИЙ ПОРТРЕТ
+========================================= */
+
+.hero-visual {
+    position: relative;
+
+    width: 100%;
+    max-width: 460px;
+
+    justify-self: center;
+
+    animation: appear 1.1s ease both;
+}
+
+/* Золотистое свечение за фотографией */
+
+.portrait-glow {
+    position: absolute;
+
+    width: 85%;
+    height: 85%;
+
+    top: 8%;
+    left: 8%;
+
+    background: rgba(233, 183, 94, 0.2);
+
+    filter: blur(85px);
+
+    z-index: -1;
+}
+
+/* Внешняя рамка */
+
+.portrait-frame {
+    position: relative;
+
+    width: 100%;
+
+    padding: 14px;
+
+    background: rgba(25, 34, 46, 0.75);
+
+    border: 1px solid rgba(233, 183, 94, 0.4);
+
+    border-radius: 8px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5),
+        inset 0 0 25px rgba(233, 183, 94, 0.04);
+}
+
+/* Верхняя строка рамки */
+
+.portrait-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px 5px 13px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Область фотографии */
+
+.portrait-image {
+    position: relative;
+
+    width: 100%;
+    height: 440px;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #19222e;
+}
+
+/* Сама фотография */
+
+.portrait-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: saturate(0.8) contrast(1.05);
+
+    transition: transform 0.7s ease;
+}
+
+/* Эффект при наведении */
+
+.portrait-frame:hover .portrait-image img {
+    transform: scale(1.04);
+}
+
+/* Затемнение фотографии снизу */
+
+.portrait-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        transparent 55%,
+        rgba(9, 12, 17, 0.8)
+    );
+
+    pointer-events: none;
+}
+
+/* Нижняя часть рамки */
+
+.portrait-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 5px 5px;
+}
+
+/* Подпись должности */
+
+.portrait-label {
+    color: var(--gold);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Имя */
+
+.portrait-bottom h3 {
+    margin-top: 3px;
+
+    color: var(--text);
+
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+/* Декоративный символ */
+
+.portrait-symbol {
+    color: var(--gold);
+
+    font-size: 32px;
+}
+
+
+/* =========================================
+   8. ПЛАВАЮЩАЯ КАРТОЧКА
+========================================= */
+
+.floating-card {
+    position: absolute;
+
+    left: -45px;
+    bottom: 105px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px 22px;
+
+    background: rgba(17, 23, 32, 0.95);
+
+    border: 1px solid rgba(233, 183, 94, 0.4);
+
+    border-radius: 7px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(15px);
+
+    z-index: 2;
+}
+
+.card-icon {
+    color: var(--gold);
+
+    font-size: 30px;
+}
+
+.floating-card strong {
+    color: var(--text);
+
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.floating-card p {
+    margin-top: 4px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   9. ДЕКОРАТИВНАЯ ЦИФРА
+========================================= */
+
+.visual-number {
+    position: absolute;
+
+    top: -65px;
+    right: -35px;
+
+    color: rgba(233, 183, 94, 0.07);
+
+    font-size: 170px;
+    font-weight: 800;
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   10. ВЕРТИКАЛЬНАЯ ПОДПИСЬ
+========================================= */
+
+.side-label {
+    position: absolute;
+
+    right: -35px;
+    top: 40%;
+
+    writing-mode: vertical-rl;
+
+    color: rgba(233, 183, 94, 0.65);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   11. НИЖНЯЯ ПАНЕЛЬ
+========================================= */
+
+.hero-bottom {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--line);
+}
+
+.bottom-left,
+.bottom-right {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.bottom-line {
+    width: 20px;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+.bottom-year {
+    color: var(--gold);
+    font-weight: 800;
+}
+
+
+/* =========================================
+   12. АНИМАЦИЯ ПОЯВЛЕНИЯ
+========================================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   13. ПЛАНШЕТЫ
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding: 25px 5%;
+    }
+
+    .hero-content {
+        gap: 35px;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .portrait-image {
+        height: 360px;
+    }
+
+    .floating-card {
+        left: -15px;
+    }
+
+    .top-label {
+        display: none;
+    }
+
+    .side-label {
+        right: -20px;
+    }
+
+}
+
+
+/* =========================================
+   14. МОБИЛЬНЫЕ УСТРОЙСТВА
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 100vh;
+
+        padding: 22px 6%;
+    }
+
+    .hero-top {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .availability {
+        font-size: 8px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 55px 0;
+    }
+
+    h1 {
+        font-size: clamp(43px, 11vw, 65px);
+
+        letter-spacing: -3px;
+    }
+
+    .hero-text h2 {
+        font-size: 17px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .hero-visual {
+        max-width: 390px;
+    }
+
+    .portrait-image {
+        height: 420px;
+    }
+
+    .floating-card {
+        left: 10px;
+        bottom: 90px;
+    }
+
+    .visual-number {
+        font-size: 110px;
+
+        top: -40px;
+    }
+
+    .side-label {
+        right: -18px;
+
+        font-size: 7px;
+    }
+
+    .hero-bottom {
+        gap: 15px;
+    }
+
+    .bottom-left,
+    .bottom-right {
+        font-size: 7px;
+        letter-spacing: 0.7px;
+    }
+
+}
+
+
+/* =========================================
+   15. УМЕНЬШЕНИЕ АНИМАЦИИ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
